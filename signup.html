@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up</title>
+    <link rel = "stylesheet">
+</head>
+<body>
+    <i><b><div class = "header">SIGNUP - PAGE</div></b></i>
+
+    <form action="action_page.php" method="post">
+        <div class="container-fluid">
+          <label for="name"><b>NAME</b></label>
+          <input type="text" placeholder="Enter NAME" name="name" required>
+      
+          <label for="phone-number"><b>Phone-Number</b></label>
+          <input type="password" placeholder="Enter Phone-No." name="phone" required>
+
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Set Up Username" name="uname" required>
+      
+          <label for="enter-pass"><b>Password</b></label>
+          <input type="password" placeholder="Set-Up Password" name="password" required>
+
+          <label for="enter-pass"><b>Re-Password</b></label>
+          <input type="password" placeholder="Re-Enter Password" name="enter" required><br><br><br>
+
+          <button type="submit" class="btn-login">Sign-Up</button></div><br><br>      
+        <div class="container" style="background-color:black">
+      </form>
+      <button type="submit" class="cln-btn">Cancel</button></div><br><br>
+      
+
+</body>
+<style>
+    
+    body{
+        background-color:black;
+    }
+    .header{
+        margin-left: 800px;
+        font-size: 60px;
+        color: aqua;
+        height:150px;
+    }
+    /* Bordered form */
+    form {
+      border: 10px solid black;
+    }
+    
+    /* Full-width inputs */
+    input[type=text], input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid black;
+      box-sizing: border-box;
+    }
+    
+    /* Set a style for all buttons */
+    .btn-login {
+      color: black;
+      background-color: lightgreen;
+      margin-left: 800px;
+      border: 7px solid blueviolet;
+      cursor: pointer;
+      width: 20%;
+      padding : 15px 10px;
+      font-size: 20px;
+      border-radius:7px;
+    }
+    
+    /* Add a hover effect for buttons */
+    .btn-login:hover {
+      background-color: green;
+      color: yellow;
+      border: 7px solid blue;
+      border-radius:7px;
+    }
+    
+    /* Extra style for the cancel button (red) */
+    .cln-btn {
+        width: 250px;
+        height:75px;
+        background-color: orange;
+        margin-left:910px;
+        border: 5px solid brown;
+        font-size: 20px;
+        border-radius:6px;
+    }
+
+    .cln-btn:hover{
+        background-color: crimson;
+        color: gold;
+        border: 5px solid aqua;
+        border-radius:6px;
+    }  
+    
+   
+</style>    
+</html>

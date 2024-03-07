@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CONV_Rvm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <b><i><a class="navbar-brand" href="#">CONV_Rvm</a></b></i>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse mx-3" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              
+                <li class="nav-item">
+                <a class="nav-link active " aria-current="page" href="#">Home</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="/about" target="_blank">About-Maker</a>
+              </li>
+
+              <li class="nav-item" >
+                <a class="nav-link" href="/documents" target="_blank">Doucmentation</a>
+              </li>
+
+              <li class="nav-item dropdown contact-dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Contact-Me
+                </a>
+
+                <div class ="dropdown-items">
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="https://github.com/RishiVT2004" target="_blank">Github</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="https://www.linkedin.com/in/rishivatsal-mishra-62b823248/" target="_blank">Linkedin</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="https://twitter.com/RishiVT_47" target="_blank">Twitter(X)</a></li>
+                </ul>
+              </div>
+              </li>
+            </ul>
+
+            <form class="d-flex">
+              <button class="btn btn-outline-success mx-1" class="/login">
+                <a href="/login" target="_blank">Login</a></button>
+              <button class="btn btn-outline-danger mx-1" type="submit">
+                <a href="/signup" target="_blank">Signup</a></button>
+            </form>
+          </div>
+        </div>
+    </nav>
+
+    <!-- adding alerts and a statement returning "your image has been processed and can be viewed here - : "-->
+    <!-- to perform this action a secret key must be added in flask-->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+     
+        {% for category, message in messages %} 
+        <!-- Bootstrap alert -->
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong> {{ message | safe}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %}
+
+    {% endif %}
+    {% endwith %}
+
+    <div class="container">
+      <h1 class="fs-2 text"><div class = "name-x"><i> ||<b> CONV_Rvm</b></i> --- Convert images to jpeg,png,webp and more ....  --- ||</h1><br>
+      </div>
+    <form action="/edit" method="post" enctype="multipart/form-data" target="_blank">
+
+      <div class="mb-3">
+        <!-- Here put name = file *** -->
+        <i><b><label for="formFile" class="form-label"><div class="to_edit">| |Chose an image to edit | |</div></label><b></i><br><br><br>
+        <input class="form-control" type="file" id="formFile" name="file">
+      </div>
+
+      <div class="mb-4">
+         <!-- Here put select name = option to execute below function  *** -->
+          <select name="option" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+            <option value="option">Select Option</option>
+            <option value="convert_jpeg">Convert to jpeg</option>
+            <option value="convert_png">Convert to png</option>
+            <option value="convert_webp">Convert to webp</option>
+            <option value="convert_gray">Convert to gray-scale</option>
+            <option value="convert_brg">Convert to BRG-scale</option>
+          </select>
+          <label for="floatingSelect"></label>
+      <div class="mb-3">
+        <div class="button-pos"><button type="submit" class="btn btn-success">Submit</button></div>
+      </div>
+    </div>
+
+    </form>
+    </div>
+    
+    
+</body>
+
+<style>
+  body{
+    background-color: black;
+    color: white;
+
+  }
+  
+  .container{
+    margin-top: 30px;
+    margin-left: 320px;
+
+
+  }
+
+  .name-x{
+    background-color: crimson;
+    color: yellow;
+    width: 1030px;
+    height: 80px;
+    padding: 10px;
+    border-radius: 15px;
+    margin-left: 240px;
+    box-shadow: 20px;
+    margin-top: 80px;
+    border: 5px dashed yellow;
+
+
+}
+
+
+.to_edit{
+  margin-left: 50px;
+  font-size: x-large;
+  color: aqua;
+  background-color: purple;
+  border radius:10px
+
+
+}
+
+.button-pos{
+    margin-left: 900px;
+}
+
+.button-pos :hover{
+  color: gold;
+  background-color: red;
+  border: 5px solid white;
+}
+
+.nav-item :hover{
+  background-color : blue;
+  border: 3px solid yellow;
+  color: white;
+}
+</style>
+</html>
